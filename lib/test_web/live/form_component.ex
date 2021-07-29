@@ -21,7 +21,7 @@ defmodule TestWeb.FormComponent do
       <div>
         <%= live_component TestWeb.FormComponent.NestedComponent, %{form: f} %>
       </div>
-      <button type="submit" phx-target="<%= @myself %>">Leave</button>
+      <button type="submit" phx-target="<%= @myself %>">Save</button>
 
     </form>
     """
