@@ -10,22 +10,22 @@ defmodule TestWeb.FormComponent do
   end
 
   @impl true
-  def render(assigns) do
-    ~L"""
-    <%= f = form_for :model, "#",
-      id: "test_form",
-      phx_submit: "save",
-      phx_target: @myself %>
+def render(assigns) do
+  ~L"""
+  <%= f = form_for :model, "#",
+    id: "test_form",
+    phx_submit: "save",
+    phx_target: @myself %>
 
-      <div>Hello</div>
-      <div>
-        <%= live_component TestWeb.FormComponent.NestedComponent, %{form: f} %>
-      </div>
-      <button type="submit" phx-target="<%= @myself %>">Leave</button>
+    <div>Hello</div>
+    <div>
+      <%= live_component TestWeb.FormComponent.NestedComponent, %{form: f} %>
+    </div>
+    <button type="submit" phx-target="<%= @myself %>">Save</button>
 
-    </form>
-    """
-  end
+  </form>
+  """
+end
 end
 
 defmodule TestWeb.FormComponent.NestedComponent do
